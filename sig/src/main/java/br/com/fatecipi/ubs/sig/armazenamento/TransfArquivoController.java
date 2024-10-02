@@ -19,8 +19,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-// import br.com.fatecipi.ubs.sig.armazenamento.ArmazenamentoFileNotFoundException;
-// import br.com.fatecipi.ubs.sig.armazenamento.ArmazenamentoService;
+import br.com.fatecipi.ubs.sig.armazenamento.ArmazenamentoFileNotFoundException;
+import br.com.fatecipi.ubs.sig.armazenamento.ArmazenamentoService;
 
 @Controller
 public class TransfArquivoController {
