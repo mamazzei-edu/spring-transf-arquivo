@@ -31,6 +31,12 @@ public class TransfArquivoController {
         this.armazenamentoService = armazenamentoService;
     }
 
+    @GetMapping("/")
+    public String index(Model model) {
+        return "index";
+    }
+
+
     @GetMapping("/arquivos")
     public String listaArquivos(Model model) throws IOException {
         model.addAttribute("arquivos", armazenamentoService.carregarTodos().map(
