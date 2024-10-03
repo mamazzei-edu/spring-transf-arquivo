@@ -43,7 +43,7 @@ public class TransfArquivoController {
     @GetMapping("/arquivos/{nomeArquivo:.+}")
     @ResponseBody
     public ResponseEntity<Resource> servirArquivo(@PathVariable String nomeArquivo) {
-        Resource arquivo = (Resource) armazenamentoService.carregar(nomeArquivo);
+        Resource arquivo = armazenamentoService.carregarComoRecurso(nomeArquivo);
 
         if (arquivo == null)
             return ResponseEntity.notFound().build();

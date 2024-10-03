@@ -1,14 +1,14 @@
 <html xmlns:th="https://www.thymeleaf.org"></html>
 <body>
 
-	<div th:if="${message}">
-		<h2 th:text="${message}"/>
+	<div th:if="${messagem}">
+		<h2 th:text="${messagem}"/>
 	</div>
 
 	<div>
-		<form method="POST" enctype="multipart/form-data" action="/">
+		<form method="POST" enctype="multipart/form-data" action="/arquivos">
 			<table>
-				<tr><td>File to upload:</td><td><input type="file" name="arquivos" /></td></tr>
+				<tr><td>Arquivo para transferir:</td><td><input type="file" name="arquivos" /></td></tr>
 				<tr><td></td><td><input type="submit" value="Upload" /></td></tr>
 			</table>
 		</form>
@@ -16,7 +16,7 @@
 
 	<div>
 		<ul>
-			<li th:each="file : ${files}">
+			<li th:each="file : ${arquivos}">
 				<a th:href="${file}" th:text="${file}" />
 			</li>
 		</ul>
