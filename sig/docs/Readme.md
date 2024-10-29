@@ -7,7 +7,7 @@ https://github.com/Mathcerra123/01-projetoAMS1
 # Grupo 2 - Integrantes e url
 Grupo: Isabella Vitória / Gustavo Graciotti / Natália Louise
 https://github.com/natylouise/ProjetoIntegradorI.git
-
+https://www.figma.com/design/1EJy3FAUB8zJ181WEWrIcy/Prototipo---Formul%C3%A1rio-de-Cadastro?m=auto&t=Hk6X6mUUUFRA9jHF-6
 
 # Grupo 3 - 
 
