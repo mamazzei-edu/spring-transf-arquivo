@@ -1,16 +1,13 @@
 package br.com.fatecipi.ubs.sig.armazenamento;
 
 import java.io.InputStream;
-import java.nio.file.FileSystem;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.InputMismatchException;
 import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
@@ -54,6 +51,8 @@ public class ArmazenamentoSistemaDeArquivoService implements ArmazenamentoServic
             try(InputStream entrada = arquivo.getInputStream()) {
                 Files.copy(entrada, destino, StandardCopyOption.REPLACE_EXISTING);
             }
+            String texto = ExtraiTextoPDF.extraiTextoPDF(destino.toString());
+            System.out.println(texto);
         } catch (Exception e) {
             throw new ArmazenamentoException("Falha ao armazenar arquivo " + arquivo.getOriginalFilename(), e);
         }
