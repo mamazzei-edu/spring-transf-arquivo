@@ -56,6 +56,14 @@ public class ArmazenamentoSistemaDeArquivoService implements ArmazenamentoServic
             String texto2 = ExtraiTextoPDF.extraiTextoPDFiText(destino.toString());
             System.out.println("Itext:");
             System.out.println(texto2);
+            String regex = "^Ficha(.*)";
+            //String regex = "(.*)?[A-Za-z0-9.]+@[A-Za-z0-9]+\\.[a-zA-Z]+(\\.[A-Za-z]+)?+(\\.[A-Za-z]+)?(.*)?";
+            boolean encontrou = texto2.matches(regex);
+            if (encontrou) {
+                System.out.println("Encontrou email");
+            } else {
+                System.out.println("Não encontrou email");
+            }
         } catch (Exception e) {
             throw new ArmazenamentoException("Falha ao armazenar arquivo " + arquivo.getOriginalFilename(), e);
         }
