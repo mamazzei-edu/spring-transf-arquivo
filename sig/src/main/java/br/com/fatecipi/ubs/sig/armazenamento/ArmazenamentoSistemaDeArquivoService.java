@@ -54,6 +54,11 @@ public class ArmazenamentoSistemaDeArquivoService implements ArmazenamentoServic
             try(InputStream entrada = arquivo.getInputStream()) {
                 Files.copy(entrada, destino, StandardCopyOption.REPLACE_EXISTING);
             }
+            String texto = ExtraiTextoPDF.extraiTextoPDF(destino.toString());
+            System.out.println(texto);
+            String texto2 = ExtraiTextoPDF.extraiTextoPDFiText(destino.toString());
+            System.out.println("Itext:");
+            System.out.println(texto2);
         } catch (Exception e) {
             throw new ArmazenamentoException("Falha ao armazenar arquivo " + arquivo.getOriginalFilename(), e);
         }
